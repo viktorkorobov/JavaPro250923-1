@@ -9,13 +9,10 @@ public class Main {
         Product product2 = new Product("Book", 200, false, LocalDate.of(2023, 2, 1));
         Product product3 = new Product("Toy", 150, true, LocalDate.of(2023, 3, 1));
 
-        // Створення списку продуктів
         List<Product> productList = Arrays.asList(product1, product2, product3);
 
-        // Створення екземпляра ProductManager
         StreamApi productManager = new StreamApi();
 
-        // Тестування методів
         List<Product> expensiveBooks = productManager.getExpensiveBooks(productList);
         System.out.println("Expensive books: " + expensiveBooks);
 
