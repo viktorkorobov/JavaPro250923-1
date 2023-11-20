@@ -13,9 +13,9 @@ public class Main extends ArrayValueCalculator{
             int result = doCalc(testArray);
             System.out.println("Result sum: " + result);
         } catch (ArraySizeException e) {
-            System.out.println("Incorrect size: " + e.getMessage());
+            System.out.println(e.getMessage());
         } catch (ArrayDataException e) {
-            System.out.println("Incorrect data: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 }
