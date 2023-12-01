@@ -13,16 +13,13 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(8081);
             System.out.println("Server is listening on port 8081");
 
-            // Очікування підключення клієнта
             Socket clientSocket = serverSocket.accept();
             System.out.println("Client connected");
 
-            // Отримання введення від клієнта
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String clientGreeting = in.readLine();
             System.out.println("Client: " + clientGreeting);
 
-            // Перевірка чи є російські букви в привітанні
             if (containsRussianLetters(clientGreeting)) {
                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
                 out.println("Що таке паляниця?");
@@ -45,7 +42,6 @@ public class Server {
     }
 
     private static boolean containsRussianLetters(String input) {
-        // Перевірка чи є російські букви в рядку
         return input.matches(".*[а-яА-Я].*");
     }
 }
