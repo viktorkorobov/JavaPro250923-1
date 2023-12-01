@@ -11,11 +11,11 @@ public class ClientSocket {
       try {
             Socket socket = new Socket("localhost", 8081);
            Scanner scanner =new Scanner(System.in);
-            // Відправлення привітання серверу
+
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println(scanner.next());
 
-            // Отримання відповіді від сервера
+
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String serverResponse = in.readLine();
             System.out.println("Server: " + serverResponse);
@@ -27,7 +27,7 @@ public class ClientSocket {
                 serverResponse = in.readLine();
                 System.out.println("Server respone: " + serverResponse);
             } else System.out.println("Incorrect answer");
-            // Закриття з'єднання
+
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
